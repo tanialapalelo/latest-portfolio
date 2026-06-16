@@ -1,4 +1,4 @@
-// tests/setup.ts
+// tests/setup.tsx
 import '@testing-library/jest-dom'
 import { vi } from 'vitest'
 
