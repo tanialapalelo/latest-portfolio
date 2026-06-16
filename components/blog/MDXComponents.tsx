@@ -7,10 +7,14 @@ function CopyButton({ code }: { code: string }) {
   const [copied, setCopied] = useState(false)
   return (
     <button
-      onClick={() => {
-        navigator.clipboard.writeText(code)
-        setCopied(true)
-        setTimeout(() => setCopied(false), 2000)
+      onClick={async () => {
+        try {
+          await navigator.clipboard.writeText(code)
+          setCopied(true)
+          setTimeout(() => setCopied(false), 2000)
+        } catch {
+          // clipboard API unavailable or permission denied
+        }
       }}
       className="absolute top-3 right-3 font-mono text-xs text-ink-dim border border-grid-line rounded px-2 py-1 hover:text-periwinkle transition-colors"
       aria-label="Copy code"
