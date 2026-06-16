@@ -1,6 +1,5 @@
 'use client'
 import Link from 'next/link'
-import { usePathname } from 'next/navigation'
 
 const links = [
   { href: '/#about', label: 'About' },
@@ -10,7 +9,6 @@ const links = [
 ]
 
 export function Nav() {
-  const pathname = usePathname()
   return (
     <nav className="fixed top-0 inset-x-0 z-50 border-b border-grid-line bg-bg/80 backdrop-blur-sm">
       <div className="mx-auto flex h-16 max-w-[1080px] items-center justify-between px-6">
