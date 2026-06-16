@@ -11,16 +11,20 @@ export function FallingChars() {
   const { isGameMode } = useGameMode()
 
   useEffect(() => {
-    const canvas = canvasRef.current!
-    const ctx = canvas.getContext('2d')!
-    let cols: number
-    let drops: number[]
+    const canvas = canvasRef.current
+    const ctx = canvas?.getContext('2d')
+    if (!canvas || !ctx) return
+    let cols = 0
+    let drops: number[] = []
 
     function resize() {
       canvas.width = window.innerWidth
       canvas.height = window.innerHeight
-      cols = Math.floor(canvas.width / CELL)
-      drops = Array.from({ length: cols }, () => Math.random() * -80)
+      const newCols = Math.floor(canvas.width / CELL)
+      if (newCols !== cols) {
+        cols = newCols
+        drops = Array.from({ length: cols }, () => Math.random() * -80)
+      }
     }
 
     function draw() {

@@ -1,4 +1,3 @@
-// app/layout.tsx
 import type { Metadata } from 'next'
 import { Fraunces, Inter, IBM_Plex_Mono } from 'next/font/google'
 import { GameModeProvider } from '@/lib/game-mode-context'
@@ -45,7 +44,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <GameModeProvider>
           <FallingChars />
           <Nav />
-          {/* FallingChars, XPBar, GameModePill, GameModeOverlay, KonamiCode wired in later tasks */}
+          {/* XPBar, GameModePill, GameModeOverlay, KonamiCode wired in later tasks */}
           <main className="pt-16">{children}</main>
           <Footer />
         </GameModeProvider>
