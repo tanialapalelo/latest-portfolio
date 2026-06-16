@@ -1,0 +1,60 @@
+export const metadata = {
+  title: "Calendar Clone",
+  slug: "calendar-clone",
+  caseStudyNumber: "01",
+  accent: "marigold",
+  tagline: "A production-grade Google Calendar rebuild — OAuth, RRULE engine, real test suite.",
+  liveUrl: "https://calendar-web-ivory.vercel.app",
+  repoUrl: "https://github.com/tanialapalelo/calendar-clone",
+  tech: ["Next.js 16", "NestJS 11", "PostgreSQL", "Turborepo"],
+  stats: [
+    { label: "Monorepo", value: "Turborepo" },
+    { label: "Views", value: "4 (Year / Month / Week / Day)" },
+    { label: "Milestones", value: "7 / 7 shipped" },
+    { label: "Scope", value: "Solo" },
+  ],
+  features: [
+    {
+      title: "API-owned OAuth",
+      accent: "coral",
+      description: "Google OAuth 2.0 with HttpOnly JWT cookies and CSRF state validation.",
+      chips: ["OAuth 2.0", "HttpOnly JWT", "CSRF protection"],
+    },
+    {
+      title: "Real RRULE semantics",
+      accent: "marigold",
+      description: "Recurring events with per-instance exceptions: this, following, or all.",
+      chips: ["RRULE", "Exceptions", "Edit scopes"],
+    },
+    {
+      title: "Tested like production",
+      accent: "periwinkle",
+      description: "Vitest + RTL on the frontend. Jest + Supertest e2e against real PostgreSQL.",
+      chips: ["Vitest", "Jest + Supertest", "CodeQL"],
+    },
+    {
+      title: "Built for keyboards too",
+      accent: "mint",
+      description: "WAI-ARIA modals, dark mode, four calendar views, keyboard shortcuts.",
+      chips: ["WAI-ARIA", "Keyboard nav", "Dark mode"],
+    },
+  ],
+}
+
+## Why I built a calendar from scratch
+
+Most engineers treat Google Calendar as a black box. I wanted to understand every moving part — especially recurring events, which look simple until you try to implement "edit this and all following" semantics across timezones.
+
+## The RRULE engine
+
+The hardest part wasn't the UI. It was building a recurrence engine that correctly handles exceptions. When you edit one occurrence in a recurring series, you need to store that exception without breaking the rest of the series.
+
+<RecurrenceDemo />
+
+## Architecture
+
+The monorepo splits cleanly: a Next.js frontend, a NestJS API, and a shared TypeScript package for types. Turborepo caches build artifacts so CI stays fast.
+
+## What I learned
+
+OAuth is harder than it looks when you own the backend. HttpOnly cookies, CSRF tokens, and refresh token rotation all need to work together. Getting this wrong in production means silent auth failures.
