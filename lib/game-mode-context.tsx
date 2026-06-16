@@ -1,17 +1,17 @@
-// lib/game-mode-context.tsx
 'use client'
-import { createContext, useContext, useState } from 'react'
+import { createContext, useCallback, useContext, useState } from 'react'
 
 type GameModeCtx = { isGameMode: boolean; toggle: () => void }
-const Ctx = createContext<GameModeCtx>({ isGameMode: false, toggle: () => {} })
+const GameModeContext = createContext<GameModeCtx>({ isGameMode: false, toggle: () => {} })
 
 export function GameModeProvider({ children }: { children: React.ReactNode }) {
   const [isGameMode, setIsGameMode] = useState(false)
+  const toggle = useCallback(() => setIsGameMode(v => !v), [])
   return (
-    <Ctx.Provider value={{ isGameMode, toggle: () => setIsGameMode(v => !v) }}>
+    <GameModeContext.Provider value={{ isGameMode, toggle }}>
       {children}
-    </Ctx.Provider>
+    </GameModeContext.Provider>
   )
 }
 
-export const useGameMode = () => useContext(Ctx)
+export const useGameMode = () => useContext(GameModeContext)
