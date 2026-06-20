@@ -26,8 +26,11 @@ export function Nav() {
             </Link>
           ))}
           <button
+            onClick={() => {
+              window.dispatchEvent(new KeyboardEvent('keydown', { key: 'k', metaKey: true, bubbles: true }))
+            }}
             className="font-mono text-xs text-ink-dim border border-grid-line rounded-md px-2 py-1 hover:text-periwinkle hover:border-periwinkle transition-colors"
-            aria-label="Open command palette"
+            aria-label="Open command palette (⌘K)"
           >
             ⌘K
           </button>
