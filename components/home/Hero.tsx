@@ -1,15 +1,13 @@
 import Link from 'next/link'
 import { AgendaCard } from './AgendaCard'
+import { AsciiPortrait } from '@/components/ui/AsciiPortrait'
 
 export function Hero() {
   return (
     <section className="pt-32 pb-20">
       <div className="grid grid-cols-1 gap-12 lg:grid-cols-2 lg:items-center">
         <div className="flex flex-col gap-6">
-          {/* AsciiPortrait wired in Task 22 */}
-          <div className="h-48 w-48 rounded-[14px] border border-grid-line bg-bg-elevated flex items-center justify-center">
-            <span className="font-mono text-xs text-ink-dim">portrait</span>
-          </div>
+          <AsciiPortrait src="/tania-portrait.jpg" width={42} />
           <div>
             <p className="font-mono text-xs text-periwinkle uppercase tracking-widest mb-2">
               IT ● Women Empowerment ● Creativity
