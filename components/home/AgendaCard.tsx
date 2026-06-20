@@ -8,12 +8,7 @@ const items = [
     dot: 'bg-periwinkle',
     label: 'Open to',
     value: 'Full-stack SWE roles',
-  },
-  {
-    dot: 'bg-marigold',
-    label: 'Pursuing',
-    value: "Master's in HCI / CS with AI & Learning Systems",
-  },
+  }
 ]
 
 export function AgendaCard() {
