@@ -14,6 +14,15 @@ export function KonamiCode() {
 
   useEffect(() => {
     function onKey(e: KeyboardEvent) {
+      const target = e.target as HTMLElement | null
+      if (
+        target &&
+        (target.tagName === 'INPUT' ||
+          target.tagName === 'TEXTAREA' ||
+          target.isContentEditable)
+      ) {
+        return
+      }
       if (e.key === SEQUENCE[progress.current]) {
         progress.current += 1
         if (progress.current === SEQUENCE.length) {
