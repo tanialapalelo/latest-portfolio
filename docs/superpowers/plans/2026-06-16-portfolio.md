@@ -2106,7 +2106,7 @@ import { render } from '@testing-library/react'
 import { AsciiPortrait } from '@/components/ui/AsciiPortrait'
 
 test('renders aria-hidden container', () => {
-  const { container } = render(<AsciiPortrait src="/tania-portrait.jpg" width={40} />)
+  const { container } = render(<AsciiPortrait src="/tania-portrait.jpeg" width={40} />)
   const el = container.firstChild as HTMLElement
   expect(el).toHaveAttribute('aria-hidden', 'true')
 })
@@ -2181,10 +2181,10 @@ In `components/home/Hero.tsx`, replace the placeholder `<div>` with:
 ```tsx
 import { AsciiPortrait } from '@/components/ui/AsciiPortrait'
 // Replace the placeholder div:
-<AsciiPortrait src="/tania-portrait.jpg" width={42} />
+<AsciiPortrait src="/tania-portrait.jpeg" width={42} />
 ```
 
-Also add this reminder: place `/public/tania-portrait.jpg` (your portrait photo) in the public folder before testing the hero visually.
+Also add this reminder: place `/public/tania-portrait.jpeg` (your portrait photo) in the public folder before testing the hero visually.
 
 - [ ] **Step 6: Commit**
 
@@ -3057,7 +3057,7 @@ Expected: All tests PASS. Fix any failures before continuing.
 ```bash
 pnpm build
 ```
-Expected: Build succeeds with no errors. Note any warnings about missing `public/tania-portrait.jpg` — add the portrait photo before final deploy.
+Expected: Build succeeds with no errors. Note any warnings about missing `public/tania-portrait.jpeg` — add the portrait photo before final deploy.
 
 - [ ] **Step 4: Verify all routes statically generated**
 
@@ -3083,7 +3083,7 @@ Check:
 
 - [ ] **Step 6: Add portrait photo**
 
-Copy your portrait photo to `/public/tania-portrait.jpg`.
+Copy your portrait photo to `/public/tania-portrait.jpeg`.
 
 - [ ] **Step 7: Final commit**
 
@@ -3096,7 +3096,7 @@ git commit -m "feat: portfolio complete — all 4 phases shipped"
 
 ## Pre-deploy checklist
 
-- [ ] `public/tania-portrait.jpg` added
+- [ ] `public/tania-portrait.jpeg` added
 - [ ] `pnpm build` succeeds with no errors
 - [ ] `pnpm test:run` all PASS
 - [ ] LinkedIn URL in Footer updated to your actual profile slug

@@ -119,7 +119,7 @@ lib/
 mdx-components.tsx    ← root-level entry point required by @next/mdx App Router
                          re-exports from components/blog/MDXComponents.tsx
 public/
-  tania-portrait.jpg  ← source image for AsciiPortrait
+  tania-portrait.jpeg  ← source image for AsciiPortrait
   blog/               ← images per post slug
   projects/           ← images per project slug
 
@@ -273,7 +273,7 @@ blog/
                        (imported by root mdx-components.tsx)
 
 ui/
-  AsciiPortrait.tsx    canvas, /public/tania-portrait.jpg, hover randomize effect
+  AsciiPortrait.tsx    canvas, /public/tania-portrait.jpeg, hover randomize effect
   FallingChars.tsx     ambient canvas, IBM Plex Mono chars, always-on
   CommandPalette.tsx   Cmd+K, arrow nav, Escape to close
   GameModeOverlay.tsx  snake canvas, pointer-events:none, wrap-around walls

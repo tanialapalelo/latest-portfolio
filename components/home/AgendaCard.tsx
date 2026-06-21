@@ -10,7 +10,6 @@ const items = [
     value: 'Full-stack SWE roles',
   }
 ]
-
 export function AgendaCard() {
   return (
     <div className="rounded-[14px] border border-grid-line bg-bg-elevated p-6 flex flex-col gap-4">
