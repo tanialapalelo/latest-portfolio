@@ -45,12 +45,23 @@ export function moveSnake(
   gridW: number,
   gridH: number
 ): SnakeState {
+  if (state.gameOver) return state
+
   const head = wrapPosition(
     { x: state.snake[0].x + dir.x, y: state.snake[0].y + dir.y },
     gridW,
     gridH
   )
   const ate = checkFoodCollision(head, state.food)
+
+  // The tail vacates its cell this same tick unless food was eaten (in which
+  // case the snake grows and the tail stays put), so it must not count as a
+  // collision target.
+  const body = ate ? state.snake : state.snake.slice(0, -1)
+  if (body.some(seg => seg.x === head.x && seg.y === head.y)) {
+    return { ...state, gameOver: true }
+  }
+
   const newSnake = ate
     ? [head, ...state.snake]
     : [head, ...state.snake.slice(0, -1)]

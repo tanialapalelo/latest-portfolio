@@ -46,3 +46,60 @@ describe('checkFoodCollision', () => {
     expect(checkFoodCollision({ x: 5, y: 3 }, { x: 5, y: 4 })).toBe(false)
   })
 })
+
+describe('moveSnake self-collision', () => {
+  it('sets gameOver true when head collides with body', () => {
+    // U-shaped snake: head at (2,1) moving down (x:0,y:1) would land on (2,2),
+    // which is occupied by an existing body segment.
+    const state = {
+      snake: [
+        { x: 2, y: 1 },
+        { x: 1, y: 1 },
+        { x: 1, y: 2 },
+        { x: 2, y: 2 },
+        { x: 3, y: 2 },
+      ],
+      food: { x: 19, y: 14 },
+      score: 0,
+      gameOver: false,
+    }
+    const next = moveSnake(state, { x: 0, y: 1 }, 20, 15)
+    expect(next.gameOver).toBe(true)
+  })
+
+  it('does not treat moving into the vacating tail cell as a collision', () => {
+    // 4-segment snake forming a tight square loop:
+    // head (1,0) -> (1,1) -> (0,1) -> tail (0,0)
+    // Moving left (x:-1,y:0): head goes from (1,0) to (0,0), which is the
+    // tail cell. Since no food is eaten, the tail vacates (0,0) this same
+    // tick, so this must NOT be flagged as a collision.
+    const state = {
+      snake: [
+        { x: 1, y: 0 },
+        { x: 1, y: 1 },
+        { x: 0, y: 1 },
+        { x: 0, y: 0 },
+      ],
+      food: { x: 19, y: 14 },
+      score: 0,
+      gameOver: false,
+    }
+    const next = moveSnake(state, { x: -1, y: 0 }, 20, 15)
+    expect(next.gameOver).toBe(false)
+    expect(next.snake[0]).toEqual({ x: 0, y: 0 })
+  })
+
+  it('is a no-op when state is already game over', () => {
+    const state = {
+      snake: [
+        { x: 5, y: 5 },
+        { x: 4, y: 5 },
+      ],
+      food: { x: 1, y: 1 },
+      score: 3,
+      gameOver: true,
+    }
+    const next = moveSnake(state, { x: 1, y: 0 }, 20, 15)
+    expect(next).toEqual(state)
+  })
+})
