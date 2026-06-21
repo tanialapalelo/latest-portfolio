@@ -2,8 +2,13 @@ import type { Metadata } from 'next'
 import { Fraunces, Inter, IBM_Plex_Mono } from 'next/font/google'
 import { GameModeProvider } from '@/lib/game-mode-context'
 import { FallingChars } from '@/components/ui/FallingChars'
+import { XPBar } from '@/components/ui/XPBar'
+import { GameModeOverlay } from '@/components/ui/GameModeOverlay'
+import { GameModePill } from '@/components/ui/GameModePill'
+import { KonamiCode } from '@/components/ui/KonamiCode'
 import { Nav } from '@/components/layout/Nav'
 import { Footer } from '@/components/layout/Footer'
+import { CommandPaletteProvider } from '@/components/layout/CommandPaletteProvider'
 import './globals.css'
 
 const fraunces = Fraunces({
@@ -42,11 +47,16 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     >
       <body className="min-h-screen bg-bg font-body text-ink antialiased">
         <GameModeProvider>
-          <FallingChars />
-          <Nav />
-          {/* XPBar, GameModePill, GameModeOverlay, KonamiCode wired in later tasks */}
-          <main className="pt-16">{children}</main>
-          <Footer />
+          <CommandPaletteProvider>
+            <FallingChars />
+            <XPBar />
+            <Nav />
+            <GameModePill />
+            <GameModeOverlay />
+            <KonamiCode />
+            <main className="pt-16">{children}</main>
+            <Footer />
+          </CommandPaletteProvider>
         </GameModeProvider>
       </body>
     </html>
