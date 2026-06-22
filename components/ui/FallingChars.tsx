@@ -11,9 +11,9 @@ export function FallingChars() {
   const { isGameMode } = useGameMode()
 
   useEffect(() => {
-    const canvas = canvasRef.current
-    const ctx = canvas?.getContext('2d')
-    if (!canvas || !ctx) return
+    if (!canvasRef.current) return
+    const canvas = canvasRef.current!
+    const ctx = canvas.getContext('2d')!
     let cols = 0
     let drops: number[] = []
 

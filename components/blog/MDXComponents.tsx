@@ -27,7 +27,7 @@ function CopyButton({ code }: { code: string }) {
 export function Pre({ children, ...props }: React.ComponentProps<'pre'>) {
   const code = typeof children === 'string'
     ? children
-    : (children as React.ReactElement)?.props?.children ?? ''
+    : (children as React.ReactElement<{ children?: string }>)?.props?.children ?? ''
   return (
     <div className="relative my-6">
       <pre
