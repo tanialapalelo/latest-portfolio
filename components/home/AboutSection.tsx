@@ -1,7 +1,8 @@
 const skills = {
-  Frontend: ['Next.js', 'React', 'TypeScript', 'Tailwind CSS', 'Vitest', 'Playwright'],
-  Backend: ['NestJS', 'Node.js', 'PostgreSQL', 'Prisma', 'REST', 'tRPC'],
-  Cloud: ['Vercel', 'Supabase', 'Upstash Redis', 'Sentry', 'GitHub Actions'],
+  Frontend: ['Next.js 16', 'React', 'TypeScript', 'Tailwind CSS', 'Material-UI', 'Storybook', 'Vitest', 'React Testing Library', 'Playwright'],
+  Backend: ['NestJS', 'Node.js', 'Django', 'Java', 'REST APIs', 'Swagger'],
+  Database: ['PostgreSQL', 'Redis', 'Prisma', 'Supabase'],
+  'DevOps & Tools': ['Docker', 'GitHub Actions', 'GCP', 'Turborepo', 'pnpm', 'Jest', 'Supertest', 'Sentry'],
 }
 
 export function AboutSection() {
