@@ -1,7 +1,6 @@
 'use client'
 import { useState } from 'react'
 import Image from 'next/image'
-import type { MDXComponents } from 'mdx/types'
 
 function CopyButton({ code }: { code: string }) {
   const [copied, setCopied] = useState(false)
@@ -79,8 +78,3 @@ export function Callout({
   )
 }
 
-export const mdxComponents: MDXComponents = {
-  pre: Pre,
-  img: BlogImage as MDXComponents['img'],
-  Callout,
-}

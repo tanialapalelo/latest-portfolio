@@ -2,6 +2,7 @@ import type { Metadata } from 'next'
 import { getProjectSlugs } from '@/lib/content'
 import { ProjectHero } from '@/components/project/ProjectHero'
 import { FeatureGrid } from '@/components/project/FeatureGrid'
+import { mdxComponents } from '@/mdx-components'
 
 export async function generateStaticParams() {
   return getProjectSlugs().map(slug => ({ slug }))
@@ -29,7 +30,7 @@ export default async function ProjectPage(
       <ProjectHero {...metadata} />
       <FeatureGrid features={metadata.features} />
       <div className="prose prose-invert max-w-none py-12">
-        <Content />
+        <Content components={mdxComponents} />
       </div>
     </div>
   )
