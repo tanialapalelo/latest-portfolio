@@ -10,7 +10,7 @@ const ITEMS: Item[] = [
   { label: 'Community', href: '/#community', keywords: 'women talk rtc' },
   { label: 'GitHub ↗', href: 'https://github.com/tanialapalelo', keywords: 'code repos', external: true },
   { label: 'LinkedIn ↗', href: 'https://linkedin.com/in/tanialapalelo', keywords: 'connect', external: true },
-  { label: 'Email ↗', href: 'mailto:niatania102@gmail.com', keywords: 'contact', external: true },
+  { label: 'Email ↗', href: 'mailto:taniasilvanalapalelo@gmail.com', keywords: 'contact', external: true },
 ]
 
 type Props = { isOpen: boolean; onClose: () => void }

@@ -26,3 +26,11 @@ test('filters items by query', async () => {
   expect(screen.getByText('Projects')).toBeInTheDocument()
   expect(screen.queryByText('Blog')).not.toBeInTheDocument()
 })
+
+test('email item uses CV-aligned contact address', () => {
+  render(<CommandPalette isOpen onClose={() => {}} />)
+  expect(screen.getByRole('link', { name: /email/i })).toHaveAttribute(
+    'href',
+    'mailto:taniasilvanalapalelo@gmail.com'
+  )
+})
