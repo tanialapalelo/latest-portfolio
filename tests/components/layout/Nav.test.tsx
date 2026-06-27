@@ -7,3 +7,8 @@ test('renders all nav links', () => {
   expect(screen.getByText('Blog')).toBeInTheDocument()
   expect(screen.getByText('Community')).toBeInTheDocument()
 })
+
+test('renders Experience link pointing to the new section anchor', () => {
+  render(<Nav />)
+  expect(screen.getByRole('link', { name: 'Experience' })).toHaveAttribute('href', '/#experience')
+})
