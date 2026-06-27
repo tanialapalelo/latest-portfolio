@@ -10,7 +10,7 @@ export function Hero() {
           <AsciiPortrait src="/tania-portrait.jpeg" width={42} />
           <div>
             <p className="font-mono text-xs text-periwinkle uppercase tracking-widest mb-2">
-              IT ● Women Empowerment ● Creativity
+              Frontend Engineer ● Next.js ● NestJS ● TypeScript ● PostgreSQL
             </p>
             <h1 className="font-display italic text-5xl text-ink leading-tight">
               Tania Lapalelo
@@ -27,7 +27,7 @@ export function Hero() {
               View Projects
             </Link>
             <a
-              href="mailto:niatania102@gmail.com"
+              href="mailto:taniasilvanalapalelo@gmail.com"
               className="border border-grid-line text-ink font-mono text-sm px-5 py-2.5 rounded-lg hover:-translate-y-0.5 transition-transform"
             >
               Get in Touch
