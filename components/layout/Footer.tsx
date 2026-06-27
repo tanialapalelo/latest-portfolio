@@ -25,7 +25,16 @@ export function Footer() {
             LinkedIn ↗
           </a>
           <a
-            href="mailto:niatania102@gmail.com"
+            href="https://medium.com/@tanialapalelo"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="font-mono text-xs text-ink-dim hover:text-periwinkle transition-colors"
+            aria-label="Medium"
+          >
+            Medium ↗
+          </a>
+          <a
+            href="mailto:taniasilvanalapalelo@gmail.com"
             className="font-mono text-xs text-ink-dim hover:text-periwinkle transition-colors"
             aria-label="Email"
           >
