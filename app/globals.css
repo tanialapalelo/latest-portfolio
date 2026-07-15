@@ -18,13 +18,13 @@
   /* Accent — categorical, not decorative */
   --color-coral: #FF6B5C;
   --color-marigold: #FFB627;
-  --color-periwinkle: #9AA6FF;
+  --color-periwinkle: #6FA8D8;
   --color-mint: #4ED9B0;
 
   /* Accent soft backgrounds */
   --color-coral-soft: rgba(255 107 92 / 0.14);
   --color-marigold-soft: rgba(255 182 39 / 0.14);
-  --color-periwinkle-soft: rgba(154 166 255 / 0.14);
+  --color-periwinkle-soft: rgba(111 168 216 / 0.14);
   --color-mint-soft: rgba(78 217 176 / 0.14);
 
   /* Typography — populated by next/font CSS vars in layout.tsx */
