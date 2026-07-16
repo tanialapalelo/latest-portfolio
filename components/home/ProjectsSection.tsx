@@ -1,29 +1,29 @@
-import { getProjectSlugs } from '@/lib/content'
+import { createPublicClient } from '@/lib/supabase/public'
 import { ProjectCard } from './ProjectCard'
-
-type ProjectMeta = {
-  slug: string
-  caseStudyNumber: string
-  accent: 'coral' | 'marigold' | 'periwinkle' | 'mint'
-  tagline: string
-  tech: string[]
-}
+import type { Project } from '@/types/supabase'
 
 export async function ProjectsSection() {
-  const slugs = getProjectSlugs()
-  const projects: ProjectMeta[] = await Promise.all(
-    slugs.map(async slug => {
-      const { metadata } = await import(`@/content/projects/${slug}.mdx`)
-      return { slug, ...metadata }
-    })
-  )
+  const supabase = createPublicClient()
+  const { data: projects } = await supabase
+    .from('projects')
+    .select('*')
+    .order('sort_order')
+
+  if (!projects?.length) return null
 
   return (
     <section id="projects" className="pt-20">
       <p className="font-mono text-xs text-periwinkle uppercase tracking-widest mb-8">Projects</p>
       <div className="grid grid-cols-1 gap-6 lg:grid-cols-2">
-        {projects.map(p => (
-          <ProjectCard key={p.slug} {...p} />
+        {projects.map((p: Project) => (
+          <ProjectCard
+            key={p.id}
+            slug={p.slug}
+            caseStudyNumber={p.case_study_number}
+            accent={p.accent}
+            tagline={p.tagline}
+            tech={p.tech}
+          />
         ))}
       </div>
     </section>
