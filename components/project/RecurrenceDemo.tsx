@@ -16,7 +16,7 @@ export function RecurrenceDemo() {
   return (
     <div className="my-8 rounded-[14px] border border-marigold bg-marigold-soft p-6 not-prose">
       <p className="font-mono text-xs text-marigold uppercase tracking-widest mb-4">
-        Interactive Demo — Edit Recurring Event
+        Interactive Demo - Edit Recurring Event
       </p>
       <p className="text-sm text-ink-dim mb-4">
         You&apos;re editing &quot;Weekly Sync&quot; (every Monday). Which occurrences should this change affect?
