@@ -113,7 +113,7 @@ Single row. No `sort_order`.
 **Environment variables:**
 ```
 NEXT_PUBLIC_SUPABASE_URL       # safe to expose — RLS enforces access
-NEXT_PUBLIC_SUPABASE_ANON_KEY  # safe to expose — read-only for public data
+NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY  # safe to expose — read-only for public data
 ```
 
 No service role key needed. Public sections use the anon key. Admin mutations also use the anon key — Row Level Security policies on each table restrict writes to authenticated users only.
