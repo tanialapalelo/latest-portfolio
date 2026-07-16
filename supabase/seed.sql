@@ -4,7 +4,7 @@ insert into experiences (title, company, location, period, accent, bullets, sort
   'Frontend Engineer',
   'Wings Group Indonesia (FMCG enterprise, ~20,000 employees)',
   'Jakarta, Indonesia',
-  'Jun 2023 – Present',
+  'Jun 2023 - Present',
   'periwinkle',
   '[
     "Built the Sales Order system in Next.js (Docker) with a multi-condition promotional pricing engine covering 10+ promo types, the primary order entry point for Wings'' national distribution network.",
@@ -18,7 +18,7 @@ insert into experiences (title, company, location, period, accent, bullets, sort
   'Software Engineer',
   'Wings Group Indonesia',
   'Jakarta, Indonesia',
-  'Oct 2021 – Jun 2023',
+  'Oct 2021 - Jun 2023',
   'mint',
   '[
     "Developed and maintained 7 HR modules (payroll, e-recruitment, termination, job-batch processing, online forms) using Java and Joomla, supporting 20,000+ employees.",
@@ -46,7 +46,7 @@ insert into projects (slug, case_study_number, tagline, accent, tech, sort_order
 (
   'calendar-clone',
   '01',
-  'A production-grade Google Calendar rebuild — OAuth, RRULE engine, real test suite.',
+  'A production-grade Google Calendar rebuild - OAuth, RRULE engine, real test suite.',
   'marigold',
   '["Next.js 16", "NestJS 11", "PostgreSQL", "Turborepo"]',
   0
@@ -64,7 +64,7 @@ insert into projects (slug, case_study_number, tagline, accent, tech, sort_order
 insert into community (name, description, href, accent, sort_order) values
 (
   'Women Talk Series',
-  'A YouTube talk series I founded to amplify women in tech — engineers, designers, and founders sharing their journeys.',
+  'A YouTube talk series I founded to amplify women in tech - engineers, designers, and founders sharing their journeys.',
   'https://www.youtube.com/watch?v=AxnzU07nlVk&list=PL-1PWH5uyT-eJSJf1oQTbnlbvUDS-I4HK',
   'mint',
   0
