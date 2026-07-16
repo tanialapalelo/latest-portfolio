@@ -15,7 +15,7 @@ export async function EducationSection() {
       <div className="rounded-[14px] border border-grid-line bg-bg-elevated p-6">
         <p className="text-sm text-ink mb-1">{education.degree}</p>
         <p className="font-mono text-xs text-ink-dim mb-4">
-          {education.institution} — {education.year}
+          {education.institution} - {education.year}
         </p>
         <div className="flex flex-wrap gap-2">
           {education.certifications.map((cert: string) => (

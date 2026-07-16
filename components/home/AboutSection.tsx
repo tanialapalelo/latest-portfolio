@@ -12,13 +12,13 @@ export function AboutSection() {
       <div className="grid grid-cols-1 gap-12 lg:grid-cols-2">
         <div className="flex flex-col gap-4 text-ink-dim leading-relaxed">
           <p>
-            I&apos;m a frontend engineer at Wings Group Indonesia — a 20,000-person FMCG enterprise — where I&apos;ve spent five years building and shipping production systems that real people depend on.
+            I&apos;m a frontend engineer at Wings Group Indonesia, a 20,000-person FMCG enterprise, where I&apos;ve spent five years building and shipping production systems that real people depend on.
           </p>
           <p>
             My work sits at the intersection of engineering rigour and thoughtful design. I care about accessibility, test coverage, and systems that are maintainable long after the sprint ends.
           </p>
           <p>
-            Outside of work I run the Women Talk Series — a community initiative for women in tech — and contribute to Rewriting the Code.
+            Outside of work I run the Women Talk Series, a community initiative for women in tech, and contribute to Rewriting the Code.
           </p>
         </div>
         <div className="flex flex-col gap-6">

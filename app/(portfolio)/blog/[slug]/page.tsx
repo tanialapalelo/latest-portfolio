@@ -12,7 +12,7 @@ export async function generateMetadata(
   const { slug } = await params
   const { metadata } = await import(`@/content/blog/${slug}.mdx`)
   return {
-    title: `${metadata.title} — Tania Lapalelo`,
+    title: `${metadata.title} - Tania Lapalelo`,
     description: metadata.excerpt,
     openGraph: {
       title: metadata.title,

@@ -3,7 +3,7 @@ import { getBlogSlugs } from '@/lib/content'
 import { BlogIndex } from '@/components/blog/BlogIndex'
 
 export const metadata: Metadata = {
-  title: 'Writing — Tania Lapalelo',
+  title: 'Writing - Tania Lapalelo',
   description: 'Essays and notes on frontend engineering, full-stack systems, and building in public.',
 }
 

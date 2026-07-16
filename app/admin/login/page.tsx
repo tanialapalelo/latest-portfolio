@@ -28,7 +28,7 @@ export default function LoginPage({
         </p>
         {sent && (
           <p className="font-mono text-xs text-mint mb-4">
-            Magic link sent — check your email.
+            Magic link sent - check your email.
           </p>
         )}
         <form action={sendMagicLink} className="flex flex-col gap-4">

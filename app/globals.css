@@ -15,7 +15,7 @@
   /* Borders */
   --color-grid-line: rgba(239 235 227 / 0.10);
 
-  /* Accent — categorical, not decorative */
+  /* Accent - categorical, not decorative */
   --color-coral: #FF6B5C;
   --color-marigold: #FFB627;
   --color-periwinkle: #6FA8D8;
@@ -27,7 +27,7 @@
   --color-periwinkle-soft: rgba(111 168 216 / 0.14);
   --color-mint-soft: rgba(78 217 176 / 0.14);
 
-  /* Typography — populated by next/font CSS vars in layout.tsx */
+  /* Typography - populated by next/font CSS vars in layout.tsx */
   --font-display: var(--font-fraunces);
   --font-body: var(--font-inter);
   --font-mono: var(--font-ibm-plex-mono);

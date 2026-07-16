@@ -35,7 +35,9 @@ export default async function EditCommunityPage({
         </label>
         <label className="flex flex-col gap-1">
           <span className="font-mono text-xs text-ink-dim">Accent</span>
-          <input name="accent" defaultValue={entry.accent} className="bg-bg-elevated border border-grid-line rounded-lg px-4 py-2 font-mono text-sm text-ink focus:outline-none focus:border-periwinkle" />
+          <select name="accent" defaultValue={entry.accent} className="bg-bg-elevated border border-grid-line rounded-lg px-4 py-2 font-mono text-sm text-ink focus:outline-none focus:border-periwinkle">
+            {['periwinkle', 'mint', 'coral', 'marigold'].map(a => <option key={a} value={a}>{a}</option>)}
+          </select>
         </label>
         <label className="flex flex-col gap-1">
           <span className="font-mono text-xs text-ink-dim">Sort order</span>

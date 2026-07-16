@@ -19,7 +19,7 @@ export default async function ProjectsAdminPage() {
         {(projects ?? []).map((p: Project) => (
           <div key={p.id} className="rounded-[14px] border border-grid-line bg-bg-elevated p-4 flex items-center justify-between gap-4">
             <div>
-              <p className="font-mono text-xs text-periwinkle">Case Study {p.case_study_number} — {p.slug}</p>
+              <p className="font-mono text-xs text-periwinkle">Case Study {p.case_study_number} - {p.slug}</p>
               <p className="text-sm text-ink-dim">{p.tagline}</p>
             </div>
             <div className="flex gap-2 shrink-0">

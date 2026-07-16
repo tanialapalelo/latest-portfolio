@@ -15,7 +15,7 @@ const ibmPlexMono = IBM_Plex_Mono({
 })
 
 export const metadata: Metadata = {
-  title: 'Tania Lapalelo — Frontend Engineer',
+  title: 'Tania Lapalelo - Frontend Engineer',
   description:
     'Frontend engineer with 5 years of production experience building full-stack systems with Next.js, NestJS, TypeScript, and PostgreSQL.',
   openGraph: {
