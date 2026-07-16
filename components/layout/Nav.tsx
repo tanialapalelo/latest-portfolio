@@ -14,7 +14,7 @@ export function Nav() {
     <nav className="fixed top-0 inset-x-0 z-50 border-b border-grid-line bg-bg/80 backdrop-blur-sm">
       <div className="mx-auto flex h-16 max-w-[1080px] items-center justify-between px-6">
         <Link href="/" className="font-display italic text-lg text-ink hover:text-periwinkle transition-colors">
-          tania.
+          Tania.
         </Link>
         <div className="flex items-center gap-6">
           {links.map(({ href, label }) => (
