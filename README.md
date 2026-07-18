@@ -4,12 +4,12 @@ Personal portfolio and blog, built with Next.js 16 (App Router). Includes a term
 
 ## Features
 
-- **Terminal hero** — animated terminal-style introduction on the landing page
-- **Snake game mode** — playable easter egg embedded in the UI
-- **MDX blog & projects** — content authored in MDX with syntax highlighting (`rehype-pretty-code`, Tokyo Night theme)
-- **Medium RSS feed** — pulls and displays recent writing directly from a Medium profile
-- **Admin CMS** (`/admin`) — Supabase-authenticated dashboard for managing projects, experience, education, and community entries
-- **Responsive nav** — adapts across breakpoints, layered correctly above game mode UI
+- **Terminal hero**: animated terminal-style introduction on the landing page
+- **Snake game mode**: playable easter egg embedded in the UI
+- **MDX blog & projects**: content authored in MDX with syntax highlighting (`rehype-pretty-code`, Tokyo Night theme)
+- **Medium RSS feed**: pulls and displays recent writing directly from a Medium profile
+- **Admin CMS** (`/admin`): Supabase-authenticated dashboard for managing projects, experience, education, and community entries
+- **Responsive nav**: adapts across breakpoints, layered correctly above game mode UI
 
 ## Tech Stack
 
