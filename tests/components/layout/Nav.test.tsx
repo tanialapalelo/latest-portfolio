@@ -12,3 +12,8 @@ test('renders Experience link pointing to the new section anchor', () => {
   render(<Nav />)
   expect(screen.getByRole('link', { name: 'Experience' })).toHaveAttribute('href', '/#experience')
 })
+
+test('renders the brand mark before the wordmark', () => {
+  render(<Nav />)
+  expect(screen.getByTestId('brand-mark')).toBeInTheDocument()
+})

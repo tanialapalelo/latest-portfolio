@@ -1,6 +1,7 @@
 'use client'
 import { useState } from 'react'
 import Link from 'next/link'
+import { BrandMark } from '@/lib/brand-mark'
 
 const links = [
   { href: '/#about', label: 'About' },
@@ -18,8 +19,11 @@ export function Nav() {
       <div className="mx-auto flex h-16 max-w-[1080px] items-center justify-between px-6">
         <Link
           href="/"
-          className="font-display italic text-lg text-ink hover:text-periwinkle transition-colors"
+          className="flex items-center gap-2 font-display italic text-lg text-ink hover:text-periwinkle transition-colors"
         >
+          <span aria-hidden="true">
+            <BrandMark size={24} />
+          </span>
           Tania.
         </Link>
 
