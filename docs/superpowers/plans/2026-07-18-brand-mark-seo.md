@@ -13,7 +13,7 @@
 - Badge background: `#1C1E2A` (site's `--color-bg`)
 - "T" color: `#6FA8D8` (`--color-periwinkle`)
 - "L" color: `#EFEBE3` (`--color-ink`) at 90% opacity
-- Canonical domain: `https://tanialapalelo.com`
+- Canonical domain: `https://tanialapalelo.vercel.app`
 - `BrandMark` must use only `div`/`span` elements with inline style objects — no `<svg>`, `<rect>`, `<text>` tags. `next/og`'s `ImageResponse` is powered by `satori`, which only renders a constrained HTML/CSS subset; raw SVG primitives are not part of that subset, but absolutely-positioned `div`/`span` text is (this is exactly what the official `next/og` icon example uses).
 - Font: hardcode `fontFamily: 'serif'` (a generic family satori renders without extra setup) in `BrandMark` — do not reference the site's Fraunces `next/font` variable, `next/og` cannot load a Google Font by name without fetching and embedding its binary, which is out of scope here.
 - No `twitter-image.tsx` file — Twitter/X falls back to `og:image` when it's absent, so don't create a duplicate.
@@ -347,7 +347,7 @@ test('renders a Person JSON-LD script with expected fields', () => {
   expect(data['@type']).toBe('Person')
   expect(data.name).toBe('Tania Lapalelo')
   expect(data.jobTitle).toBe('Frontend Engineer')
-  expect(data.url).toBe('https://tanialapalelo.com')
+  expect(data.url).toBe('https://tanialapalelo.vercel.app')
   expect(data.sameAs).toEqual([
     'https://github.com/tanialapalelo',
     'https://linkedin.com/in/tanialapalelo',
@@ -371,7 +371,7 @@ export function PersonJsonLd() {
     '@type': 'Person',
     name: 'Tania Lapalelo',
     jobTitle: 'Frontend Engineer',
-    url: 'https://tanialapalelo.com',
+    url: 'https://tanialapalelo.vercel.app',
     sameAs: [
       'https://github.com/tanialapalelo',
       'https://linkedin.com/in/tanialapalelo',
@@ -405,7 +405,7 @@ Update the `metadata` export:
 
 ```tsx
 export const metadata: Metadata = {
-  metadataBase: new URL('https://tanialapalelo.com'),
+  metadataBase: new URL('https://tanialapalelo.vercel.app'),
   title: 'Tania Lapalelo - Frontend Engineer',
   description:
     'Frontend engineer with 5 years of production experience building full-stack systems with Next.js, NestJS, TypeScript, and PostgreSQL.',
@@ -413,7 +413,7 @@ export const metadata: Metadata = {
     title: 'Tania Lapalelo',
     description:
       'Frontend engineer with 5 years of production experience.',
-    url: 'https://tanialapalelo.com',
+    url: 'https://tanialapalelo.vercel.app',
     siteName: 'Tania Lapalelo',
     images: ['/opengraph-image'],
     locale: 'en_US',
@@ -440,8 +440,8 @@ Render `PersonJsonLd` in the body:
 - [ ] **Step 6: Verify manually**
 
 Run: `pnpm dev`, open `http://localhost:3000/`, view page source, and confirm:
-- `<meta property="og:image" content="https://tanialapalelo.com/opengraph-image" />` (absolute URL, proves `metadataBase` resolved it)
-- `<meta name="twitter:image" content="https://tanialapalelo.com/opengraph-image" />`
+- `<meta property="og:image" content="https://tanialapalelo.vercel.app/opengraph-image" />` (absolute URL, proves `metadataBase` resolved it)
+- `<meta name="twitter:image" content="https://tanialapalelo.vercel.app/opengraph-image" />`
 - a `<script type="application/ld+json">` containing `"@type":"Person"`
 
 - [ ] **Step 7: Commit**
@@ -475,7 +475,7 @@ test('allows crawling of the site but disallows /admin', () => {
     allow: '/',
     disallow: '/admin',
   })
-  expect(result.sitemap).toBe('https://tanialapalelo.com/sitemap.xml')
+  expect(result.sitemap).toBe('https://tanialapalelo.vercel.app/sitemap.xml')
 })
 ```
 
@@ -497,7 +497,7 @@ export default function robots(): MetadataRoute.Robots {
       allow: '/',
       disallow: '/admin',
     },
-    sitemap: 'https://tanialapalelo.com/sitemap.xml',
+    sitemap: 'https://tanialapalelo.vercel.app/sitemap.xml',
   }
 }
 ```
@@ -541,10 +541,10 @@ test('includes home, all blog slugs, and all project slugs', async () => {
   const { default: sitemap } = await import('@/app/sitemap')
   const urls = sitemap().map(entry => entry.url)
   expect(urls).toEqual([
-    'https://tanialapalelo.com',
-    'https://tanialapalelo.com/blog/2026-06-16-hello-world',
-    'https://tanialapalelo.com/projects/calendar-clone',
-    'https://tanialapalelo.com/projects/giftclaw',
+    'https://tanialapalelo.vercel.app',
+    'https://tanialapalelo.vercel.app/blog/2026-06-16-hello-world',
+    'https://tanialapalelo.vercel.app/projects/calendar-clone',
+    'https://tanialapalelo.vercel.app/projects/giftclaw',
   ])
 })
 ```
@@ -561,7 +561,7 @@ Expected: FAIL with `Cannot find module '@/app/sitemap'`
 import type { MetadataRoute } from 'next'
 import { getBlogSlugs, getProjectSlugs } from '@/lib/content'
 
-const BASE_URL = 'https://tanialapalelo.com'
+const BASE_URL = 'https://tanialapalelo.vercel.app'
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const blogEntries = getBlogSlugs().map(slug => ({
