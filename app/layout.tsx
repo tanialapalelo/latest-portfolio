@@ -26,7 +26,6 @@ export const metadata: Metadata = {
       'Frontend engineer with 5 years of production experience.',
     url: 'https://tanialapalelo.vercel.app',
     siteName: 'Tania Lapalelo',
-    images: ['/opengraph-image'],
     locale: 'en_US',
     type: 'website',
   },
@@ -34,7 +33,6 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'Tania Lapalelo',
     description: 'Frontend engineer with 5 years of production experience.',
-    images: ['/opengraph-image'],
   },
 }
 
