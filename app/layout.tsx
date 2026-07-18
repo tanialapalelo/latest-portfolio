@@ -1,5 +1,6 @@
 import type { Metadata } from 'next'
 import { Fraunces, Inter, IBM_Plex_Mono } from 'next/font/google'
+import { PersonJsonLd } from '@/components/layout/PersonJsonLd'
 import './globals.css'
 
 const fraunces = Fraunces({
@@ -15,6 +16,7 @@ const ibmPlexMono = IBM_Plex_Mono({
 })
 
 export const metadata: Metadata = {
+  metadataBase: new URL('https://tanialapalelo.vercel.app'),
   title: 'Tania Lapalelo - Frontend Engineer',
   description:
     'Frontend engineer with 5 years of production experience building full-stack systems with Next.js, NestJS, TypeScript, and PostgreSQL.',
@@ -22,12 +24,18 @@ export const metadata: Metadata = {
     title: 'Tania Lapalelo',
     description:
       'Frontend engineer with 5 years of production experience.',
-    url: 'https://tanialapalelo.com',
+    url: 'https://tanialapalelo.vercel.app',
     siteName: 'Tania Lapalelo',
+    images: ['/opengraph-image'],
     locale: 'en_US',
     type: 'website',
   },
-  twitter: { card: 'summary_large_image' },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Tania Lapalelo',
+    description: 'Frontend engineer with 5 years of production experience.',
+    images: ['/opengraph-image'],
+  },
 }
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
@@ -37,6 +45,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       className={`${fraunces.variable} ${inter.variable} ${ibmPlexMono.variable}`}
     >
       <body className="min-h-screen bg-bg font-body text-ink antialiased">
+        <PersonJsonLd />
         {children}
       </body>
     </html>
