@@ -74,7 +74,7 @@ export function CommandPalette({ isOpen, onClose }: Props) {
           value={query}
           onChange={e => setQuery(e.target.value)}
           placeholder="Search..."
-          className="w-full bg-transparent px-5 py-4 font-mono text-sm text-ink placeholder:text-ink-dim outline-none border-b border-grid-line"
+          className="w-full rounded-t-[14px] bg-transparent px-5 py-4 font-mono text-sm text-ink placeholder:text-ink-dim border-b border-grid-line"
           aria-label="Search commands"
         />
         <ul className="max-h-64 overflow-y-auto py-2">
