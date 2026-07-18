@@ -66,7 +66,7 @@ No `twitter-image.tsx` file: when absent, Twitter/X falls back to `og:image`, so
 ## Metadata Fields (`app/layout.tsx`)
 
 Add to the existing `metadata` export:
-- `metadataBase: new URL('https://tanialapalelo.com')`, resolves the OG image's relative path to an absolute URL
+- `metadataBase: new URL('https://tanialapalelo.vercel.app')`, resolves the OG image's relative path to an absolute URL
 - `openGraph.images: ['/opengraph-image']`
 - `twitter.title`, `twitter.description` (mirror the existing `openGraph` values), `twitter.images: ['/opengraph-image']`
 
@@ -81,7 +81,7 @@ Existing `title`, `description`, `openGraph.title/description/url/siteName/local
 export default function robots(): MetadataRoute.Robots {
   return {
     rules: { userAgent: '*', allow: '/', disallow: '/admin' },
-    sitemap: 'https://tanialapalelo.com/sitemap.xml',
+    sitemap: 'https://tanialapalelo.vercel.app/sitemap.xml',
   }
 }
 ```
@@ -106,7 +106,7 @@ A `<script type="application/ld+json">` rendered in `app/layout.tsx`'s `<body>`,
   "@type": "Person",
   "name": "Tania Lapalelo",
   "jobTitle": "Frontend Engineer",
-  "url": "https://tanialapalelo.com",
+  "url": "https://tanialapalelo.vercel.app",
   "sameAs": [
     "https://github.com/tanialapalelo",
     "https://linkedin.com/in/tanialapalelo",
